@@ -2,6 +2,7 @@ import argparse
 import os
 import shutil
 import time
+import pprint
 
 import torch
 import torch.nn as nn
@@ -92,6 +93,7 @@ def fast_collate(batch):
 
 best_prec1 = 0
 args = parser.parse_args()
+pprint.pprint(args)
 
 print("opt_level = {}".format(args.opt_level))
 print("keep_batchnorm_fp32 = {}".format(args.keep_batchnorm_fp32), type(args.keep_batchnorm_fp32))
