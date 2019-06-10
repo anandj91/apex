@@ -439,7 +439,8 @@ def validate(val_loader, model, criterion):
 
 
 def save_checkpoint(state, is_best, filename='ckpt/ckpt-e{}.pth.tar'):
-    torch.save(state, filename.format(state['epoch']))
+    filename = filename.format(state['epoch'])
+    torch.save(state, filename)
     if is_best:
         shutil.copyfile(filename, 'model_best.pth.tar')
 
