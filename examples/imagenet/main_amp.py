@@ -250,6 +250,7 @@ def main():
             save_checkpoint({
                 'epoch': epoch + 1,
                 'arch': args.arch,
+                'acc' : prec1,
                 'state_dict': model.state_dict(),
                 'best_prec1': best_prec1,
                 'optimizer' : optimizer.state_dict(),
